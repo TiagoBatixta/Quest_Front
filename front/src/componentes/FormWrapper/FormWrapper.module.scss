@@ -1,0 +1,20 @@
+.wrapper {
+    background: url('./../../assets/Background.png');
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 4rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+
+    .logo {
+        width: clamp(8rem, 25vw, 30rem);
+        margin-bottom: clamp(1.9rem, 5.8vw, 7rem);
+    }
+}
