@@ -1,4 +1,5 @@
 .wrapper {
+  container-type: size;
   background: url('./../../assets/background/bg-form.png');
   width: 100%;
   min-height: 100vh;
@@ -11,10 +12,12 @@
   gap: 0 4rem;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
 
   .logo {
-    width: clamp(8rem, 25vw, 30rem);
-    margin-bottom: clamp(1.9rem, 5.8vw, 7rem);
+    width: clamp(15rem, 25vw, 30rem);
+
+    @container (max-width: 733px) {
+      margin-bottom: -15vh;
+    }
   }
 }
