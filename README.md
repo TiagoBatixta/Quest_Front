@@ -22,7 +22,8 @@ Certifique-se de ter os seguintes itens instalados na sua máquina:
 - [Node.js](https://nodejs.org/) (v16 ou superior)
 - [npm](https://www.npmjs.com/) (ou [yarn](https://yarnpkg.com/), se preferir)
 
-### 🛠️ Como rodar:
+## 🛠️ Como rodar:
+---
 
 1. Clone este repositório:
 
