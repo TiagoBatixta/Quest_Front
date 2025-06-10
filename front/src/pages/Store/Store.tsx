@@ -7,10 +7,26 @@ import ProductCarroussel from '../../componentes/ProductCarroussel/ProductCarrou
 
 const jogador = { nome: 'Jacinto Pinto dos Santos', moedas: 1000 };
 const produtos = [
-  { nome: 'Pack 1 de Temas', preco: 300 },
-  { nome: 'Pack 2 de Temas', preco: 400 },
-  { nome: 'Pack 3 de Temas', preco: 500 },
-  { nome: 'Pack 4 de Temas', preco: 600 },
+  {
+    nome: 'Pack 1 de Temas',
+    preco: 300,
+    items: ['Tema 1', 'Tema 2', 'Tema 3', 'Tema 4', 'Tema 5'],
+  },
+  {
+    nome: 'Pack 2 de Temas',
+    preco: 400,
+    items: ['Tema 1', 'Tema 2', 'Tema 3', 'Tema 4', 'Tema 5'],
+  },
+  {
+    nome: 'Pack 3 de Temas',
+    preco: 500,
+    items: ['Tema 1', 'Tema 2', 'Tema 3', 'Tema 4', 'Tema 5'],
+  },
+  {
+    nome: 'Pack 4 de Temas',
+    preco: 600,
+    items: ['Tema 1', 'Tema 2', 'Tema 3', 'Tema 4', 'Tema 5'],
+  },
 ];
 
 export default function Store() {
