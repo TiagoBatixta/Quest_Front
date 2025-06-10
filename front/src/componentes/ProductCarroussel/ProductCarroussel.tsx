@@ -8,6 +8,7 @@ interface IProductCarrousselProps {
   props: {
     nome: string;
     preco: number;
+    items: string[];
   }[];
 }
 
