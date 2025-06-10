@@ -1,0 +1,39 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  img {
+    width: 175px;
+    margin-bottom: 1.75rem;
+
+    @container (max-width: 670px) {
+      width: 125px;
+    }
+
+    @container (max-width: 500px) {
+      width: 90px;
+    }
+  }
+
+  p {
+    margin-bottom: 0.75rem;
+    line-height: 1.4rem;
+    font-size: 1.3rem;
+    max-width: 10ch;
+    text-align: center;
+    color: white;
+  }
+
+  .purchaseBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background-color: #256100;
+  }
+}
