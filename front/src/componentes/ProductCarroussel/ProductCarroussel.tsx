@@ -6,9 +6,11 @@ import Product from '../Product/Product';
 
 interface IProductCarrousselProps {
   props: {
+    id: number;
     nome: string;
     preco: number;
     items: string[];
+    purchased: boolean;
   }[];
 }
 

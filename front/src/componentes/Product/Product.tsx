@@ -7,14 +7,16 @@ import CheckoutMessage from '../CheckoutMessage/CheckoutMessage';
 
 interface IProductProps {
   props: {
+    id: number;
     nome: string;
     preco: number;
     items: string[];
+    purchased: boolean;
   };
 }
 
 export default function Product({ props }: IProductProps) {
-  const { nome, preco, items } = props;
+  const { nome, preco, items, purchased } = props;
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [showCheckoutMessage, setShowCheckoutMessage] = React.useState(false);
 
@@ -29,13 +31,23 @@ export default function Product({ props }: IProductProps) {
       <div className={styles.product}>
         <img src={produto} alt={nome} />
         <p>{nome}</p>
-        <button
-          className={`${styles.purchaseBtn} secondary-btn`}
-          onClick={openModal}
-        >
-          <BadgeDollarSign color="#febb0b" />
-          {preco}
-        </button>
+        {purchased ? (
+          <button
+            className={`${styles.purchaseBtn} secondary-btn`}
+            onClick={openModal}
+          >
+            <BadgeDollarSign color="#febb0b" />
+            {preco}
+          </button>
+        ) : (
+          <button
+            disabled={true}
+            className={`${styles.purchaseBtn} ${styles.disabled} secondary-btn`}
+            onClick={openModal}
+          >
+            comprado
+          </button>
+        )}
       </div>
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={closeModal}>
