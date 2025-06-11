@@ -3,6 +3,7 @@ import produto from '../../assets/store/produto.png';
 import { BadgeDollarSign, X } from 'lucide-react';
 import React from 'react';
 import thumbnail from '../../assets/store/produto-thumbnail.png';
+import CheckoutMessage from '../CheckoutMessage/CheckoutMessage';
 
 interface IProductProps {
   props: {
@@ -15,9 +16,13 @@ interface IProductProps {
 export default function Product({ props }: IProductProps) {
   const { nome, preco, items } = props;
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [showCheckoutMessage, setShowCheckoutMessage] = React.useState(false);
 
   const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setShowCheckoutMessage(false);
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -41,23 +46,36 @@ export default function Product({ props }: IProductProps) {
             <button className={styles.closeButton} onClick={closeModal}>
               <X size={24} />
             </button>
-            <h2>{nome}</h2>
-            <div className={styles.productPannel}>
-              <img src={thumbnail} alt="pack de temas" />
-              <ul>
-                {items.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </div>
 
-            <button className={`${styles.comprar} btn`}>
-              <p className={'secondary-btn'}>
-                <BadgeDollarSign color="#febb0b" />
-                {preco}
-              </p>
-              Comprar
-            </button>
+            {!showCheckoutMessage ? (
+              <>
+                <h2>{nome}</h2>
+                <div className={styles.productPannel}>
+                  <img src={thumbnail} alt="pack de temas" />
+                  <ul>
+                    {items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <CheckoutMessage success={true} />
+            )}
+
+            {!showCheckoutMessage ? (
+              <button className={`${styles.comprar} btn`}>
+                <p className={'secondary-btn'}>
+                  <BadgeDollarSign color="#febb0b" />
+                  {preco}
+                </p>
+                Comprar
+              </button>
+            ) : (
+              <button className={'secondary-btn'} onClick={closeModal}>
+                Volte a Loja
+              </button>
+            )}
           </div>
         </div>
       )}
