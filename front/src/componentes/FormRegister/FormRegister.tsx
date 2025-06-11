@@ -8,6 +8,8 @@ import image5 from '../../assets/avatar/avatar5.png';
 import image6 from '../../assets/avatar/avatar6.png';
 import React from 'react';
 
+// TODO corrigir o tamanho da imagem de usuário nos assets - Diego
+
 const images = [image1, image2, image3, image4, image5, image6];
 
 export default function FormRegister() {
@@ -37,7 +39,7 @@ export default function FormRegister() {
         <button
           type="button"
           onClick={() => setIsModalOpen(true)}
-          className={`${styles.selectAvatar} btn`}
+          className={`${styles.selectAvatar} secondary-btn`}
         >
           Selecionar Avatar
         </button>

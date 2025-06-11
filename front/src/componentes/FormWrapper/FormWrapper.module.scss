@@ -16,7 +16,7 @@
   .logo {
     width: clamp(15rem, 25vw, 30rem);
 
-    @container (max-width: 733px) {
+    @container (max-width: 683px) {
       margin-bottom: -15vh;
     }
   }
