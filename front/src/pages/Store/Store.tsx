@@ -48,7 +48,7 @@ export default function Store() {
   return (
     <div className={styles.store}>
       <header className={styles.header}>
-        <Link to="/home">
+        <Link to="/playerHub">
           <img src={back} alt="Página Anterior" />
           Voltar
         </Link>
