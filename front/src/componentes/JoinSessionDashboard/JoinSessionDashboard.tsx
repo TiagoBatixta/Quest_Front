@@ -1,5 +1,4 @@
 import styles from './JoinSessionDashboard.module.scss';
-import { Gamepad2 } from 'lucide-react';
 
 import image1 from '../../assets/avatar/avatar1.png';
 import image2 from '../../assets/avatar/avatar2.png';
@@ -7,9 +6,16 @@ import image3 from '../../assets/avatar/avatar3.png';
 import image4 from '../../assets/avatar/avatar4.png';
 import image5 from '../../assets/avatar/avatar5.png';
 import image6 from '../../assets/avatar/avatar6.png';
+import { Gamepad2 } from 'lucide-react';
 const images = [image1, image2, image3, image4, image5, image6];
 
-export default function JoinSessionDashboard() {
+interface JoinSessionDashboardProps {
+  createRoom: () => void;
+}
+
+export default function JoinSessionDashboard({
+  createRoom,
+}: JoinSessionDashboardProps) {
   return (
     <section className={styles.dashboard}>
       <header>
@@ -43,7 +49,7 @@ export default function JoinSessionDashboard() {
       </ul>
 
       <footer>
-        <button className={'btn'} type="submit">
+        <button onClick={createRoom} className={'btn'}>
           Criar Sala
         </button>
       </footer>

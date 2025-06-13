@@ -10,6 +10,8 @@ import image3 from '../../assets/avatar/avatar3.png';
 import image4 from '../../assets/avatar/avatar4.png';
 import image5 from '../../assets/avatar/avatar5.png';
 import image6 from '../../assets/avatar/avatar6.png';
+import CreateSessionDashboard from '../../componentes/CreateSessionDashboard/CreateSessionDashboard';
+import React from 'react';
 const images = [image1, image2, image3, image4, image5, image6];
 
 const jogador = {
@@ -19,6 +21,12 @@ const jogador = {
 };
 
 export default function PlayerHub() {
+  const [createRoom, setCreateRoom] = React.useState(false);
+
+  function createRoomToggle() {
+    setCreateRoom((c) => !c);
+  }
+
   return (
     <div className={styles.playerHub}>
       <header className={styles.header}>
@@ -37,20 +45,25 @@ export default function PlayerHub() {
         </span>
       </header>
       <section className={styles.section}>
-        <div className={styles.profile}>
-          <img
-            src={images[0]}
-            alt="Avatar do usuário"
-            width={250}
-            height={250}
-          />
-          <Link to="/" className={`${styles.profileLink} secondary-btn`}>
-            Meu Perfil
-          </Link>
-        </div>
-
-        <FormSession />
-        <JoinSessionDashboard />
+        {!createRoom ? (
+          <>
+            <div className={styles.profile}>
+              <img
+                src={images[0]}
+                alt="Avatar do usuário"
+                width={250}
+                height={250}
+              />
+              <Link to="/" className={`${styles.profileLink} secondary-btn`}>
+                Meu Perfil
+              </Link>
+            </div>
+            <FormSession />
+            <JoinSessionDashboard createRoom={createRoomToggle} />
+          </>
+        ) : (
+          <CreateSessionDashboard createRoom={createRoomToggle} />
+        )}
       </section>
     </div>
   );
