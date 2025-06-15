@@ -7,9 +7,11 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-style: normal;
+  user-select: none;
 }
 
-.btn {
+.btn,
+.secondary-btn {
   display: flex;
   border: none;
   justify-content: center;
@@ -24,8 +26,17 @@
   width: 13rem;
   height: 4rem;
   padding: 1rem 2.5rem;
-  background-color: #ffbe14;
+  background-color: #febb0b;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.secondary-btn,
+.innerWrapper form > .secondary-btn {
+  background-color: #febb0b;
+  padding: 0.5rem 1rem;
+  height: fit-content;
+  width: fit-content;
+  font-size: 0.9rem;
 }
 
 .innerWrapper {
@@ -46,7 +57,8 @@
   text-align: center;
 }
 
-.innerWrapper form {
+.innerWrapper form,
+form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,20 +66,22 @@
   gap: 0.75rem;
 }
 
-.innerWrapper label {
+.innerWrapper label,
+label {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.innerWrapper form label input {
+.innerWrapper form label input,
+input {
   font-size: 1.1rem;
   padding: 0.25rem 0.75rem;
   border-radius: 0.75rem;
 }
 
-.innerWrapper form button {
+.innerWrapper form > button {
   margin-top: 0.5rem;
   background-color: #256100;
 }
